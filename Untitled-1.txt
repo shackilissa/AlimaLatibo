@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Amorzinha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.6;
+            color: #ff4d6d;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(20deg); }
+        }
+        
+        h1 {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ff4d6d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #ffecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff4d6d;
+            font-size: 1rem;
+        }
+        
+        .message {
+            background: #ffecef;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+            position: relative;
+        }
+        
+        .message:before {
+            content: """;
+            position: absolute;
+            top: -30px;
+            left: 10px;
+            font-size: 80px;
+            color: #ff4d6d;
+        }
+        
+        p {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+        }
+        
+        .btn:hover {
+            background: #ff2e4f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+        }
+        
+        .surprise {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffecef;
+            border-radius: 15px;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .flowers {
+            margin: 20px 0;
+            font-size: 2rem;
+            color: #ff4d6d;
+        }
+        
+        footer {
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .photo-frame { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corações flutuantes -->
+    <div class="heart" style="top: 10%; left: 10%;">❤</div>
+    <div class="heart" style="top: 20%; right: 15%;">❤</div>
+    <div class="heart" style="bottom: 30%; left: 15%;">❤</div>
+    <div class="heart" style="bottom: 20%; right: 10%;">❤</div>
+    
+    <div class="container">
+        <h1>Para Minha Namorada Maravilhosa</h1>
+        
+        <div class="photo-frame">
+            <div class="photo-placeholder">Coloque nossa foto aqui</div>
+        </div>
+        
+        <div class="flowers">🌹 🌸 🌷 💐</div>
+        
+        <div class="message">
+            <p>Meu amor,</p>
+            <p>Hoje eu queria te dizer o quanto você é especial para mim. Cada momento ao seu lado é um presente e eu sou grato por ter você na minha vida.</p>
+            <p>Seu sorriso ilumina meus dias, sua voz acalma meu coração e seu amor me completa. Não existem palavras suficientes para expressar o que sinto por você.</p>
+            <p>Esta pequena página é apenas um símbolo do que você significa para mim. Te amo mais do que tudo!</p>
+            <p>Com todo meu amor,</p>
+            <p>Seu namorado ❤</p>
+        </div>
+        
+        <button class="btn" onclick="showSurprise()">Clique para uma surpresa</button>
+        
+        <div id="surprise" class="surprise">
+            <h2>Nossa Música Especial</h2>
+            <p>Lembra daquela música que sempre cantamos juntos?</p>
+            <p>🎵 Por você eu faço tudo, meu amor 🎵</p>
+            <p>Que tal dançarmos juntos agora?</p>
+        </div>
+        
+        <button class="btn" onclick="showLove()">Quanto eu te amo?</button>
+        
+        <div id="loveMeter" class="surprise">
+            <h2>EU TE AMO</h2>
+            <div style="background: #ff4d6d; height: 30px; width: 100%; border-radius: 15px; overflow: hidden;">
+                <div id="loveBar" style="height: 100%; width: 0%; background: white; transition: width 2s;"></div>
+            </div>
+            <p id="loveText" style="margin-top: 10px;">Mais do que palavras podem expressar!</p>
+        </div>
+        
+        <footer>
+            Feito com ❤ especialmente para você - Para sempre seu
+        </footer>
+    </div>
+
+    <script>
+        // Função para mostrar a surpresa
+        function showSurprise() {
+            const surprise = document.getElementById('surprise');
+            surprise.style.display = 'block';
+        }
+        
+        // Função para mostrar o medidor de amor
+        function showLove() {
+            const loveMeter = document.getElementById('loveMeter');
+            const loveBar = document.getElementById('loveBar');
+            const loveText = document.getElementById('loveText');
+            
+            loveMeter.style.display = 'block';
+            
+            setTimeout(function() {
+                loveBar.style.width = '100%';
+                loveText.textContent = 'INFINITO! Te amo mais que tudo neste mundo!';
+            }, 100);
+        }
+        
+        // Adiciona mais corações flutuantes
+        function createHearts() {
+            const container = document.querySelector('.container');
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(heart);
+            }
+        }
+        
+        // Inicializa a página
+        window.onload = function() {
+            createHearts();
+            document.getElementById('loveMeter').style.display = 'none';
+            document.getElementById('surprise').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
